@@ -7,5 +7,5 @@ environment_variables:
 phases:
   build:
     commands:
-        aws s3 cp --recursive ./chaildstack/ s3://artifactbucket-cicd-test/
+        aws s3 cp chaildstack/* s3://artifactbucket-cicd-test/ --recursive
 #       aws codepipeline start-pipeline-execution --name Iac-pipeline
