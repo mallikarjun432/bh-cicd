@@ -1,0 +1,11 @@
+version: 0.2
+environment_variables:
+  plaintext:
+    CHILD_TEMPLATES: |
+      sns.json
+      s3.json
+phases:
+  build:
+    commands:
+        aws s3 cp --recursive ./chaildstack/ s3://artifactbucket-cicd/
+        aws codepipeline start-pipeline-execution --name Iac-pipeline
